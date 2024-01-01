@@ -1,0 +1,22 @@
+server:
+  port: 19091
+
+logging:
+  config: classpath:logback-spring.xml
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      routes: #路由规则定义
+        - id: gataway-user #路由ID，必须唯一
+          uri: http://localhost:19091/ #路由地址，后续也可更改成其他的类型，诸如指向微服务
+          predicates: # 断言规则，既满足此断言既按照此路由规则跳转
+            - Path=/user/**  #请注意这个Path的P是大写的！
+        - id: gateway-order
+          uri: http://localhost:19092/
+          predicates:
+            - Path=/order/**
+
+
+

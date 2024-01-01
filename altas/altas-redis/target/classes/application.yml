@@ -1,0 +1,10 @@
+server:
+  port: 19092
+
+
+spring:
+  application:
+    name: gateway-server
+
+
+

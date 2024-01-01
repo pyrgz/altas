@@ -1,0 +1,12 @@
+server:
+  port: 19091
+
+logging:
+  config: classpath:log4j222.xml
+spring:
+  application:
+    name: common
+
+
+
+
